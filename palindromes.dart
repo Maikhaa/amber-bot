@@ -4,14 +4,9 @@ bool isPalindrome(String string) {
   for (var i = 0; i < charList.length ~/ 2; i++) {
     reversedHalfString = charList[i] + reversedHalfString;
   }
-
-  if (string.endsWith(reversedHalfString)) {
-    return true;
-  } else {
-    return false;
-  }
+  return string.endsWith(reversedHalfString);
 }
 
 main() {
-  print(isPalindrome('abucba'));
+  print(isPalindrome('abvba'));
 }
