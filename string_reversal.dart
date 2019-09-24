@@ -1,11 +1,17 @@
 String reverse(String string) {
-  var reversedString = '';
-  var charList = string.split('');
-  for (String char in charList) {
-    reversedString = char + reversedString;
+  if (isNullOrEmpty(string)) {
+    throw 'Invalid input';
+  } else {
+    var reversedString = '';
+    var charList = string.split('');
+    for (String char in charList) {
+      reversedString = char + reversedString;
+    }
+    return reversedString;
   }
-  return reversedString;
 }
+
+bool isNullOrEmpty(String string) => string == null || string.isEmpty;
 
 main() {
   print(reverse('hola'));
