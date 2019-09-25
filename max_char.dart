@@ -15,12 +15,12 @@ String findMaxChar(String string) {
       }
     }
 
-    aMap.forEach((k, v) {
-      if (v > maxVal) {
-        maxVal = v;
-        maxChar = k;
+    for (String char in aMap.keys) {
+      if (aMap[char] > maxVal) {
+        maxVal = aMap[char];
+        maxChar = char;
       }
-    });
+    }
 
     return maxChar;
   }
