@@ -1,14 +1,23 @@
 List<List> chunk(List<int> list, int size) {
   List<List> chunked = [];
   var chunk = [];
-  var count = 0;
+  var rest = [];
 
-  while (count <= list.length ~/ size) {
-    chunk = list.skip(size * count).take(size).toList();
-    if (chunk.isNotEmpty) {
-      chunked.add(chunk);
+  for (int item in list) {
+    if (chunk.length < size) {
+      chunk.add(item);
     }
-    count ++;
+    if (chunk.length == size) {
+      chunked.add(chunk);
+      chunk = [];
+    }
+    if (list.length - list.indexOf(item) < size) {
+      rest = chunk;
+    }
+  }
+
+  if (rest.isNotEmpty) {
+    chunked.add(rest);
   }
 
   return chunked;
