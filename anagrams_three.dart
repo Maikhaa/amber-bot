@@ -3,7 +3,6 @@ bool anagrams(String firstString, String secondString) {
   var secondCharMap = _buildCharMap(secondString);
 
   if (firstCharMap.keys.length != secondCharMap.keys.length) {
-    print(firstCharMap.keys.length);
     return false;
   }
 
