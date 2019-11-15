@@ -1,28 +1,22 @@
-List<List> chunk(List<int> list, int size) {
-  List<List> chunked = [];
+List<List> chunk(List<int> array, int chunkSize) {
+  List<List> listResult = [];
   var chunk = [];
-  var rest = [];
 
-  for (int item in list) {
-    if (chunk.length < size) {
+  for (int item in array) {
+    if (chunk.length < chunkSize) {
       chunk.add(item);
     }
-    if (chunk.length == size) {
-      chunked.add(chunk);
+    if (chunk.length == chunkSize) {
+      listResult.add(chunk);
       chunk = [];
     }
-    if (list.length - list.indexOf(item) < size) {
-      rest = chunk;
+    if (array.indexOf(item) + 1 == array.length && chunk.isNotEmpty) {
+      listResult.add(chunk);
     }
   }
-
-  if (rest.isNotEmpty) {
-    chunked.add(rest);
-  }
-
-  return chunked;
+  return listResult;
 }
 
-main() {
-  print(chunk([1, 2, 3, 4, 5, 6, 7], 2));
+void main() {
+  print(chunk([1, 2, 3, 4, 5, 6, 7, 8, 9], 4));
 }
