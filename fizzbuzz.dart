@@ -1,27 +1,21 @@
-void fizzBuzz(int number) {
-  for (var i = 1; i <= number; i++) {
-    bool multThree = false;
-    bool multFive = false;
-
-    if (i % 3 == 0) {
-      multThree = true;
-    }
-    if (i % 5 == 0) {
-      multFive = true;
-    }
-
-    if (multThree && multFive) {
-      print('fizzbuzz');
-    } else if (multThree) {
-      print('fizz');
-    } else if (multFive) {
-      print('buzz');
-    } else {
-      print(i);
+void fizzBuzz(int n) {
+  if (n == null) {
+    throw 'Invalid input';
+  } else {
+    for (var i = 1; i <= n; i++) {
+      if (i % 3 == 0 && i % 5 == 0) {
+        print('FizzBuzz');
+      } else if (i % 3 == 0) {
+        print('Fizz');
+      } else if (i % 5 == 0) {
+        print('Buzz');
+      } else {
+        print(i);
+      }
     }
   }
 }
 
-main() {
-  fizzBuzz(30);
+void main() {
+  fizzBuzz(15);
 }
