@@ -1,4 +1,4 @@
-int fib(int number, [int index = 2, int value = 0, List list]) {
+fib(int number, [int index = 2, int value = 0, List list]) {
   if (list == null) {
     list = [0, 1];
   }
