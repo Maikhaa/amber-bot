@@ -60,7 +60,6 @@ main() {
   node.children[1].add(9);
   node.children[1].add(10);
   node.children[1].children[1].add(11);
-  node.remove(2);
 
   var tree = Tree();
   tree.root = node;
