@@ -22,6 +22,8 @@ class Node {
 class Tree {
   Node root;
 
+  Tree([this.root]);
+
   void traverseBF(Function fun) {
     var list = [root];
 
@@ -61,8 +63,7 @@ main() {
   node.children[1].add(10);
   node.children[1].children[1].add(11);
 
-  var tree = Tree();
-  tree.root = node;
+  var tree = Tree(node);
 
   tree.traverseBF((Node node) => print(node.data));
   print('------');
