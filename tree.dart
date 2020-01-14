@@ -22,7 +22,7 @@ class Node {
 class Tree {
   Node root;
 
-  Tree([this.root]);
+  Tree(this.root);
 
   void traverseBF(Function fun) {
     var list = [root];
