@@ -11,3 +11,8 @@ int findUnique(List list) {
 
   return map.keys.toList()[0];
 }
+
+
+main() {
+  print(findUnique([9, 4, 9, 8, 4]));
+}
