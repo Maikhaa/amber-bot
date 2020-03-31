@@ -23,7 +23,9 @@ bool validSudoku(List<List> board) {
 }
 
 bool checkIfUnique(List<Set> setsList, int index, int number) {
-  return (setsList[index].contains(number) == true) ? false : setsList[index].add(number);
+  return (setsList[index].contains(number) == true)
+    ? false
+    : setsList[index].add(number);
 }
 
 main() {
