@@ -22,7 +22,7 @@ ListEntry findMiddleNode(ListEntry node) {
   var slow = node;
   var fast = node;
 
-  while (fast != null && fast.next != null) {
+  while (fast != null) {
     slow = slow.next;
     fast = fast.next.next;
   }
