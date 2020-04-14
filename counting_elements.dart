@@ -1,7 +1,5 @@
-import 'dart:collection';
-
 int countingElements(List list) {
-  HashSet set = HashSet();
+  Set set = {};
 
   var counter = 0;
 

@@ -1,5 +1,5 @@
 List groupAnagrams(List list) {
-  var map = {};
+  Map map = {};
 
   for (String word in list) {
     var charList = word.split('');

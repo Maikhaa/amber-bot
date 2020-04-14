@@ -8,7 +8,7 @@ class Node {
 }
 
 class MinStack {
-  var stack = ListQueue();
+  var stack = Queue();
   int min;
 
   void push(int number) {
