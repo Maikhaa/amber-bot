@@ -12,12 +12,8 @@ int lastStoneWeigth(List list) {
     var first = maxHeap.removeFirst();
     var second = maxHeap.removeFirst();
 
-    if (first > second) {
+    if (first != second) {
       maxHeap.add(first - second);
-    }
-
-    if (second > first) {
-      maxHeap.add(second - first);
     }
   }
 
