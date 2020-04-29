@@ -24,14 +24,14 @@ List bfs(Node node) {
   while (queue.isNotEmpty) {
     node = queue.removeFirst();
 
-    if (node.vertices.isNotEmpty) {
+
       for (Node vertex in node.vertices) {
         if (vertex.visited == false) {
           result.add(vertex);
           queue.addLast(vertex);
           vertex.visited = true;
         }
-      }
+
     }
   }
 
@@ -39,16 +39,16 @@ List bfs(Node node) {
 }
 
 void main() {
-  var cero = Node(0);
+  var zero = Node(0);
   var one = Node(1);
   var two = Node(2);
   var three = Node(3);
   var four = Node(4);
   var five = Node(5);
 
-  cero.vertices.add(one);
-  cero.vertices.add(two);
-  cero.vertices.add(three);
+  zero.vertices.add(one);
+  zero.vertices.add(two);
+  zero.vertices.add(three);
   two.vertices.add(four);
   three.vertices.add(four);
   four.vertices.add(five);
