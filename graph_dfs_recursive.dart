@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 class Vertex {
   var data;
   var vertices;
@@ -11,25 +9,19 @@ class Vertex {
   }
 }
 
-List dfs(Vertex vertex) {
-  List visited = [];
-  var stack = Queue();
+List dfs(Vertex vertex, [List visited]) {
+  visited ??= [vertex];
 
-  stack.addFirst(vertex);
-
-  while (stack.isNotEmpty) {
-    vertex = stack.removeFirst();
-
+  for (Vertex vertex in vertex.vertices) {
     if (!visited.contains(vertex)) {
-        visited.add(vertex);
-        for (Vertex vertex in vertex.vertices) {
-          stack.addFirst(vertex);
-        }
+      visited.add(vertex);
+      dfs(vertex, visited);
     }
   }
 
   return visited;
 }
+
 
 void main() {
   var zero = Vertex(0);
