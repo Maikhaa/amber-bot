@@ -12,22 +12,23 @@ class Vertex {
 }
 
 List bfs(Vertex vertex) {
-  Set visited = {};
+  List visited = [];
   var queue = Queue();
 
-  visited.add(vertex);
-  queue.add(vertex);
+  queue.addLast(vertex);
 
   while (queue.isNotEmpty) {
     vertex = queue.removeFirst();
 
-    for (Vertex vertex in vertex.vertices) {
-      visited.add(vertex);
-      queue.addLast(vertex);
+    if (!visited.contains(vertex)) {
+        visited.add(vertex);
+        for (Vertex vertex in vertex.vertices) {
+          queue.addLast(vertex);
+        }
     }
   }
 
-  return visited.toList();
+  return visited;
 }
 
 void main() {
@@ -41,9 +42,20 @@ void main() {
   zero.vertices.add(one);
   zero.vertices.add(two);
   zero.vertices.add(three);
+
+  one.vertices.add(zero);
+
+  two.vertices.add(zero);
   two.vertices.add(four);
+
+  three.vertices.add(zero);
   three.vertices.add(four);
+
+  four.vertices.add(two);
+  four.vertices.add(three);
   four.vertices.add(five);
+
+  five.vertices.add(four);
 
   var result = bfs(zero);
 
