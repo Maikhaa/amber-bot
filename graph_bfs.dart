@@ -1,50 +1,42 @@
 import 'dart:collection';
 
-class Node {
+class Vertex {
   var data;
   var vertices;
-  var visited;
 
-  Node(this.data)
-      : vertices = [],
-        visited = false;
+  Vertex(this.data) : vertices = [];
 
-  void add(Node node) {
-    vertices.add(node);
+  void add(Vertex vertex) {
+    vertices.add(vertex);
   }
 }
 
-List bfs(Node node) {
-  var result = [];
+List bfs(Vertex vertex) {
+  Set visited = {};
   var queue = Queue();
 
-  result.add(node);
-  queue.add(node);
+  visited.add(vertex);
+  queue.add(vertex);
 
   while (queue.isNotEmpty) {
-    node = queue.removeFirst();
+    vertex = queue.removeFirst();
 
-
-      for (Node vertex in node.vertices) {
-        if (vertex.visited == false) {
-          result.add(vertex);
-          queue.addLast(vertex);
-          vertex.visited = true;
-        }
-
+    for (Vertex vertex in vertex.vertices) {
+      visited.add(vertex);
+      queue.addLast(vertex);
     }
   }
 
-  return result.toList();
+  return visited.toList();
 }
 
 void main() {
-  var zero = Node(0);
-  var one = Node(1);
-  var two = Node(2);
-  var three = Node(3);
-  var four = Node(4);
-  var five = Node(5);
+  var zero = Vertex(0);
+  var one = Vertex(1);
+  var two = Vertex(2);
+  var three = Vertex(3);
+  var four = Vertex(4);
+  var five = Vertex(5);
 
   zero.vertices.add(one);
   zero.vertices.add(two);
@@ -53,9 +45,9 @@ void main() {
   three.vertices.add(four);
   four.vertices.add(five);
 
-  var result = bfs(cero);
+  var result = bfs(zero);
 
-  for (Node item in result) {
+  for (Vertex item in result) {
     print(item.data);
   }
 }
