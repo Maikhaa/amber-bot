@@ -23,6 +23,7 @@ int sinkIsland(List grid, int i, int j) {
   if (i - 1 >= 0) sinkIsland(grid, i - 1, j);
   if (j + 1 < grid[i].length) sinkIsland(grid, i, j + 1);
   if (j - 1 >= 0) sinkIsland(grid, i, j - 1);
+  
   return 1;
 }
 
