@@ -1,37 +1,44 @@
-bool validSchedule(int courses, List prerequisites) {
+bool validSchedule(List pre) {
   Map graph = {};
-  var valid = true;
+  Set visited = {};
 
-  for (List edge in prerequisites) {
+  for (List edge in pre) {
     graph[edge[0]] ??= [];
     graph[edge[0]].add(edge[1]);
   }
 
-  bool dfs(int vertex, [Set visited]) {
-    visited ??= {vertex};
+  bool visit(vertex) {
+    visited.add(vertex);
 
     if (graph[vertex] != null) {
       for (int neighbour in graph[vertex]) {
-        if (visited.contains(neighbour)) {
-          valid = false;
-        } else {
-          visited.add(neighbour);
-          dfs(neighbour, visited);
-        }
+        if (visited.contains(neighbour) || visit(neighbour)) return true;
       }
     }
+
+    visited.remove(vertex);
+    return false;
   }
 
-  dfs(graph.keys.toList()[0]);
-  return valid;
+  for (int key in graph.keys) {
+    if (visit(key) == true) return false;
+  }
+
+  return true;
 }
 
 main() {
-  print(validSchedule(2, [
-    [2, 3],
-    [3, 7],
-    [5, 8],
-    [8, 3],
-    [3, 5]
+  print(validSchedule([
+    [1, 3],
+    [3, 4],
+    [4, 2],
+    [2, 1],
+    [2, 5]
+  ]));
+  print(validSchedule([
+    [1, 3],
+    [3, 4],
+    [2, 1],
+    [2, 5]
   ]));
 }
