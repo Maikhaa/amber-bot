@@ -1,25 +1,25 @@
 class Vertex {
   var data;
-  var vertices;
+  var neighbours;
 
-  Vertex(this.data) : vertices = [];
+  Vertex(this.data) : neighbours = [];
 
   void add(Vertex node) {
-    vertices.add(node);
+    neighbours.add(node);
   }
 }
 
-List dfs(Vertex vertex, [List visited]) {
-  visited ??= [vertex];
+List dfs(Vertex vertex, [Set visited]) {
+  visited ??= {};
+  visited.add(vertex);
 
-  for (Vertex vertex in vertex.vertices) {
-    if (!visited.contains(vertex)) {
-      visited.add(vertex);
-      dfs(vertex, visited);
+  for (Vertex neighbour in vertex.neighbours) {
+    if (!visited.contains(neighbour)) {
+      dfs(neighbour, visited);
     }
   }
 
-  return visited;
+  return visited.toList();
 }
 
 
@@ -31,23 +31,23 @@ void main() {
   var four = Vertex(4);
   var five = Vertex(5);
 
-  zero.vertices.add(one);
-  zero.vertices.add(two);
-  zero.vertices.add(three);
+  zero.neighbours.add(one);
+  zero.neighbours.add(two);
+  zero.neighbours.add(three);
 
-  one.vertices.add(zero);
+  one.neighbours.add(zero);
 
-  two.vertices.add(zero);
-  two.vertices.add(four);
+  two.neighbours.add(zero);
+  two.neighbours.add(four);
 
-  three.vertices.add(zero);
-  three.vertices.add(four);
+  three.neighbours.add(zero);
+  three.neighbours.add(four);
 
-  four.vertices.add(two);
-  four.vertices.add(three);
-  four.vertices.add(five);
+  four.neighbours.add(two);
+  four.neighbours.add(three);
+  four.neighbours.add(five);
 
-  five.vertices.add(four);
+  five.neighbours.add(four);
 
   var result = dfs(zero);
 
