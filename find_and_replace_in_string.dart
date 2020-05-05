@@ -3,7 +3,6 @@ String findAndReplace(String string, List indexes, List sources, List targets) {
   Map targetsMap = {};
   Map stringMap = {};
 
-
   for (int i = 0; i < indexes.length; i++) {
     sourcesMap[indexes[i]] = sources[i];
   }
