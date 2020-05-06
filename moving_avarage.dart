@@ -1,23 +1,20 @@
 import 'dart:collection';
 
 class MovingAverage {
-  int window;
-  var queue;
+  final window;
+  final queue;
+  int sum = 0;
 
   MovingAverage(this.window) : queue = Queue();
 
   double next(int number) {
     if (number == null) return null;
-    var sum = 0;
 
     queue.add(number);
+    sum += number;
 
     if (queue.length > window) {
-      queue.removeFirst();
-    }
-
-    for (int num in queue) {
-      sum += num;
+      sum -= queue.removeFirst();
     }
 
     return sum / queue.length;
