@@ -15,11 +15,16 @@ bool mountainArray(List list) {
     index++;
   }
 
-  return up + down == list.length - 1;
+  if (up > 0 && down > 0) {
+   return up + down == list.length - 1;
+  }
+
+  return false;
 }
 
 void main() {
   print(mountainArray([5, 4, 3, 5]));
   print(mountainArray([3, 5, 5]));
   print(mountainArray([0, 3, 2, 1]));
+  print(mountainArray([0, 1, 2, 3]));
 }
