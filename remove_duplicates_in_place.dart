@@ -3,7 +3,7 @@ int removeDuplicates(List list) {
 
   var i = 0;
   var j = 1;
-  var index = 0;
+  var index = 1;
 
   while (j < list.length) {
     if (list[i] != list[j]) {
@@ -13,7 +13,7 @@ int removeDuplicates(List list) {
     j++;
   }
 
-  return index + 1;
+  return index;
 }
 
 void main() {
