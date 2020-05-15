@@ -1,44 +1,23 @@
-class Point {
-  var distance;
-  var x;
-  var y;
-
-  Point(this.distance, this.x, this.y);
-}
+import 'package:collection/collection.dart';
 
 List closestPoint(List points, int k) {
-  if (points.isEmpty || points == null) return [];
+    if (points.isEmpty || points == null) return [];
 
-  List sortedPoints = [];
-  List resultPoints = [];
+    var resultPoints = [];
 
-  for (List p in points) {
-    var distance = p[0] * p[0] + p[1] * p[1];
-    distance = distance.abs();
+    var sortedPoints = HeapPriorityQueue((List a, List b) =>
+        (a[0] * a[0] + a[1] * a[1]) .compareTo(b[0] * b[0] + b[1] * b[1]));
 
-    var point = Point(distance, p[0], p[1]);
-
-    if (sortedPoints.isNotEmpty) {
-      var insIndex = 0;
-      var i = 0;
-
-      while (i < sortedPoints.length &&
-          point.distance > sortedPoints[i].distance) {
-        insIndex = i + 1;
-        i++;
+    for (List point in points) {
+        sortedPoints.add(point);
       }
 
-      sortedPoints.insert(insIndex, point);
-    } else {
-      sortedPoints.add(point);
+    for(int i = 0; i < k; i++) {
+      var point  = sortedPoints.removeFirst();
+      resultPoints.add([point[0], point[1]]);
     }
-  }
 
-  for (int i = 0; i <= k - 1; i++) {
-    resultPoints.add([sortedPoints[i].x, sortedPoints[i].y]);
-  }
-
-  return resultPoints;
+    return resultPoints;
 }
 
 void main() {
