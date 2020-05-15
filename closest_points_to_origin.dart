@@ -12,12 +12,12 @@ List closestPoint(List points, int k) {
         sortedPoints.add(point);
       }
 
-    for (int i = 0; i < k; i++) {
+    for(int i = 0; i < k; i++) {
       var point  = sortedPoints.removeFirst();
       resultPoints.add([point[0], point[1]]);
     }
 
-    return resultPoints;ßStackTrace
+    return resultPoints;
 }
 
 void main() {
