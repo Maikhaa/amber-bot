@@ -4,11 +4,11 @@ List threeSum(List list) {
   List results = [];
   list.sort();
 
-  for (int i = 0; i < list.length; i++) {
+  for (int i = 0; i < list.length - 2; i++) {
+    if (i > 0 && list[i] == list[i - 1]) continue;
+
     var j = i + 1;
     var k = list.length - 1;
-
-    while (i < list.length - 1 && list[i] == list[i + 1]) i++;
 
     while (j < k) {
       var toFind = -list[i];
