@@ -12,8 +12,11 @@ String findAndReplace(String string, List indexes, List sources, List targets) {
   }
 
   for (int i = 0; i < string.length; i++) {
+    stringMap[i] = string[i];
+
     if (indexes.contains(i)) {
       stringMap[i] = string.substring(i, i + sourcesMap[i].length);
+      i += stringMap[i].length - 1;
     }
   }
 
@@ -23,9 +26,10 @@ String findAndReplace(String string, List indexes, List sources, List targets) {
     }
   }
 
-  return stringMap.values.toList().join();
+  return stringMap.values.join();
 }
 
 void main() {
   print(findAndReplace("abcd", [0, 2], ["ab", "ec"], ["eee", "ffff"]));
+  print(findAndReplace("abcd", [0, 2], ["a", "cd"], ["eee", "ffff"]));
 }
