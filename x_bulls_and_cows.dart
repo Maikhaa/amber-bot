@@ -1,6 +1,5 @@
 String bullsAndCows(String secret, String guess) {
-  if (secret.isEmpty || guess.isEmpty || secret == null || guess == null)
-    return '';
+  if (secret == null || guess == null) return '';
 
   Map secretMap = {};
   var bull = 0;
