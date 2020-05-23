@@ -7,7 +7,7 @@ String bullsAndCows(String secret, String guess) {
   var cow = 0;
 
   for (int i = 0; i < secret.length; i++) {
-    secretMap[secret[i]] ??= [0, []];
+    secretMap[secret[i]] ??= [0, Set()];
     secretMap[secret[i]][0]++;
     secretMap[secret[i]][1].add(i);
   }
