@@ -1,22 +1,20 @@
-int maxSubArray(List list) {
-  var max = 0;
-  var globalMax = 0;
+int maxSubarray(List list) {
+  var maxSum = list[0];
+  var arrSum = list[0];
 
-  for (int i = 0; i < list.length; i++) {
-    if (list[i] > max) {
-      max = list[i];
+  for (int i = 1; i < list.length; i++) {
+    if (arrSum + list[i] > list[i]) {
+      arrSum += list[i];
     } else {
-      max = max + list[i];
+      arrSum = list[i];
     }
 
-    if (max > globalMax) {
-      globalMax = max;
-    }
+    if (arrSum > maxSum) maxSum = arrSum;
   }
 
-  return globalMax;
+  return maxSum;
 }
 
 main() {
-  print(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+  print(maxSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 }
