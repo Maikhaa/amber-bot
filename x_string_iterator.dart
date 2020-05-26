@@ -7,6 +7,8 @@ class StringIterator {
   StringIterator(this.string);
 
   String next() {
+    if (hasNext() == false) return null;
+
     if (number == 0) {
       charP = numP - 1;
       var strNum = '';
@@ -17,13 +19,14 @@ class StringIterator {
       numP++;
       number = int.parse(strNum);
     }
-    number--;
 
+    number--;
     return string[charP];
   }
 
   bool hasNext() {
-    return numP == string.length + 1 ? false : true;
+    if (number == 0 && numP == string.length + 1) return false;
+    return true;
   }
 }
 
@@ -50,4 +53,5 @@ main() {
   print(stringIterator.next());
   print(stringIterator.next());
   print(stringIterator.hasNext());
+  print(stringIterator.next());
 }
