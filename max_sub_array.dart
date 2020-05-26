@@ -1,4 +1,6 @@
 int maxSubarray(List list) {
+  if (list.length == 1) return list[0];
+  
   var maxSum = list[0];
   var arrSum = list[0];
 
