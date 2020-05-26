@@ -11,10 +11,15 @@ bool isSubsequence(String s, String t) {
     map[t[i]].add(i);
   }
 
+  print(map);
+
   for (int i = 0; i < s.length; i++) {
     if (map.containsKey(s[i])) {
-      if (map[s[i]].isNotEmpty && index <= map[s[i]].first) {
+      print(map[s[i]]);
+      if (index <= map[s[i]].first) {
+        //print(map[s[i]]);
         index = map[s[i]].first;
+        print(index);
         map[s[i]].removeFirst();
       } else {
         return false;
@@ -30,5 +35,4 @@ bool isSubsequence(String s, String t) {
 main() {
   print(isSubsequence("abc", "ahbgdc"));
   print(isSubsequence("aaaaaa", "bbaaaa"));
-  print(isSubsequence("leeeeetcode", "yyylyeyeyeyeyeytycyoyydyeyyy"));
 }
