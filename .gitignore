@@ -1,0 +1,5 @@
+.DS_Store
+.packages
+.dart_tool
+.packages
+pubspec.lock
