@@ -1,5 +1,5 @@
 bool jumpGame(List list) {
-  if (list.isEmpty || list == null) return false;
+  if (list == null || list.isEmpty) return false;
 
   var getToIndex = list.length - 1;
 

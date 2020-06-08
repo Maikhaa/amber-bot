@@ -1,5 +1,5 @@
 bool stroNumber(String string) {
-  if (string.isEmpty || string == null) return false;
+  if (string == null || string.isEmpty) return false;
 
   var i = 0;
   var j = 0;

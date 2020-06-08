@@ -7,7 +7,7 @@ class StringIterator {
   StringIterator(this.string);
 
   String next() {
-    if (hasNext() == false) return null;
+    if (hasNext() == false) return '';
 
     if (number == 0) {
       charP = numP - 1;

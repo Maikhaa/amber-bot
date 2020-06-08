@@ -1,8 +1,8 @@
 import 'dart:collection';
 
 bool backspaceStringCompare(String stringA, String stringB) {
-  if (stringA.isEmpty || stringB.isEmpty || stringA == null || stringB == null)
-    return false;
+  if (stringA == null || stringB == null) return false;
+  if (stringA.isEmpty || stringB.isEmpty) return false;
 
   var stackA = backspaceString(stringA);
   var stackB = backspaceString(stringB);
@@ -27,5 +27,7 @@ Queue backspaceString(String string) {
 }
 
 void main() {
+  print(backspaceStringCompare(null, null));
+  print(backspaceStringCompare("", ""));
   print(backspaceStringCompare("a##c", "#a#c"));
 }

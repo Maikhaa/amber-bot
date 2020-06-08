@@ -1,7 +1,7 @@
 import 'dart:collection';
 
 bool isSubsequence(String s, String t) {
-  if (s.isEmpty || t.isEmpty || s == null || t == null) return false;
+  if (s == null || t == null || s.isEmpty || t.isEmpty) return false;
 
   Map map = {};
   var index = 0;

@@ -1,5 +1,5 @@
 List twoSum(List list, int target) {
-  if (list.isEmpty || list == null) return [];
+  if (list == null || list.isEmpty) return [];
   if (target == null) return [];
 
   Map map = {};

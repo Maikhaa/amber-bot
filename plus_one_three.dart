@@ -1,5 +1,5 @@
 List plusOne(List list) {
-  if (list.isEmpty || list == null) return [];
+  if (list == null || list.isEmpty) return [];
 
   for (int i = list.length - 1; i >= 0; i--) {
     if (list[i] < 9) {

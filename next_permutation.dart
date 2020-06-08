@@ -1,5 +1,5 @@
 List nextPermutation(List list) {
-  if (list.isEmpty || list == null) return [];
+  if (list == null || list.isEmpty) return [];
 
   var i = list.length - 1;
   while (i >= 1 && list[i - 1] >= list[i]) i--;

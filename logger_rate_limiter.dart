@@ -2,7 +2,7 @@ class Logger {
   Map map = {};
 
   bool shouldPrintMessage(String message, int timestamp) {
-    if (message.isEmpty || message == null || timestamp == null) return false;
+    if (message == null || timestamp == null || message.isEmpty) return false;
 
     if (map.containsKey(message)) {
       if (timestamp - map[message] < 10) {

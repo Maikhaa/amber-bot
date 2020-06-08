@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 
 int meetingRooms(List intervals) {
-  if (intervals.isEmpty || intervals == null) return 0;
+  if (intervals == null || intervals.isEmpty) return 0;
 
   intervals.sort((a, b) => a[0].compareTo(b[0]));
   var scheduledIntervals =

@@ -1,6 +1,6 @@
 bool isPalindrome(String string) {
   if (isNullOrEmpty(string)) {
-    throw 'Invalid input';
+    return false;
   } else {
     var reversedHalfString = '';
     var charList = string.split('');

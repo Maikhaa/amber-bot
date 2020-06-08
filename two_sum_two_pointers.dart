@@ -1,5 +1,5 @@
 List twoSum(List list, int target) {
-  if (list.length < 2 || list == null || target == null) return [];
+  if (list == null || target == null || list.length < 2) return [];
 
   var i = 0;
   var j = list.length - 1;

@@ -1,7 +1,5 @@
 int fibonacci(int number) {
-  if (number == null) {
-    throw 'Invalid input';
-  }
+  if (number == null) return 0;
 
   var list = [];
   for (var i = 0; i <= number; i++) {

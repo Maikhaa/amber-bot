@@ -1,5 +1,5 @@
 int findUnique(List list) {
-  if (list == null || list.isEmpty) return null;
+  if (list == null || list.isEmpty) return 0;
 
   var map = {};
   var unique;

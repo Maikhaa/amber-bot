@@ -1,5 +1,5 @@
 int removeDuplicates(List list) {
-  if (list.length == 1 || list.isEmpty || list == null) return 0;
+  if (list == null || list.isEmpty || list.length == 1) return 0;
 
   var i = 0;
   var j = 1;

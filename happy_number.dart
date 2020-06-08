@@ -1,5 +1,5 @@
 bool happyNumber(int number) {
-  if (number == null) return null;
+  if (number == null) return false;
 
   var stringList = number.toString().split('');
   var numberList = stringList.map(int.parse).toList();

@@ -1,5 +1,5 @@
 List twoSum(List list, int target) {
-  if (list.isEmpty || list == null || target == null) return null;
+  if (list == null || target == null || list.isEmpty) return [];
 
   var map = {};
   var result = [];

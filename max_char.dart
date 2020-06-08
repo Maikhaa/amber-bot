@@ -1,6 +1,6 @@
 String findMaxChar(String string) {
   if (_isNullOrEmpty(string)) {
-    throw 'Invalid input';
+    return '';
   } else {
     var charList = string.split('');
     var aMap = {};

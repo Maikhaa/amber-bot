@@ -1,6 +1,6 @@
 int reverse(int integer) {
   if (isNullOrZero(integer)) {
-    throw 'Invalid input';
+    return 0;
   } else {
     var reversedIntString = '';
     var intString = integer.abs().toString();

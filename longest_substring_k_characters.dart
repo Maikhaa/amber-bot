@@ -1,7 +1,7 @@
 import 'dart:math';
 
 int longestSubstring(String string, int k) {
-  if (string.isEmpty || string == null) return 0;
+  if (string == null || string.isEmpty) return 0;
 
   var i = 0;
   var j = 0;

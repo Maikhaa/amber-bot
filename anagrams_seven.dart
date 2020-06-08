@@ -1,6 +1,6 @@
 bool areAnagrams(String stringA, String stringB) {
   if (stringA == null || stringB == null) {
-    throw 'Invalid null input';
+    return false;
   }
 
   if (stringA.length != stringB.length) {

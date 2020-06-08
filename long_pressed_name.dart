@@ -1,5 +1,5 @@
 bool longPressedName(String name, String typed) {
-  if (name.isEmpty || name == null || typed.isEmpty || typed == null)
+  if (name == null || typed == null || typed.isEmpty || name.isEmpty)
     return false;
 
   Map map = {};

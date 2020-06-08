@@ -1,5 +1,5 @@
 List missingRanges(List list, int lower, int upper) {
-  if (lower > upper || list.isEmpty || list == null) return [];
+  if (list == null || list.isEmpty || lower > upper) return [];
 
   Set set = {};
   Map ranges = {};
