@@ -2,4 +2,7 @@
 .packages
 .dart_tool
 .packages
+.idea
+
+dart-algos.iml
 pubspec.lock
