@@ -37,5 +37,5 @@ bool isLetter(String char) =>
 
 main() {
   print(wordCloud(
-      "Apple pie, lemon dessert, chocolate dessert, vanilla cookies, chocolate cake.")); // true
+      "Apple pie, lemon dessert, chocolate dessert, vanilla cookies, chocolate cake."));
 }
